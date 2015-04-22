@@ -9,9 +9,16 @@ namespace MarkG1968.OpenMargin
 {
     public class ExposureCalculator : IExposureCalculation
     {
+        private Money exposure;
+
+        public ExposureCalculator(Money exposure)
+        {
+            this.exposure = exposure;
+        }
+
         public Money CalculateExposure()
         {
-            return Money.PoundSterling(4000);
+            return exposure;
         }
     }
 }

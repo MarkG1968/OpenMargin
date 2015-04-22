@@ -17,7 +17,7 @@ namespace MarkG1968.OpenMargin.Test
         public AutoFixtureParameterSource()
         {
             autoFixture = new Ploeh.AutoFixture.Fixture();
-            autoFixture.Customize(new AutoMoqCustomization());
+//            autoFixture.Customize(new AutoMoqCustomization());
         }
 
         IEnumerable<object[]> ParameterSource.GetParameters(MethodInfo methodInfo)
