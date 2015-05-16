@@ -8,17 +8,20 @@ namespace MarkG1968.OpenMargin
 {
     public class MarginCalculation
     {
-        private IExposureCalculation exposureCaculation;
+        private IExposureCalculation exposureCalculation;
+        private ICollateralCalculation collateralCalculation;
 
-        public MarginCalculation(IExposureCalculation exposureCaculation)
+        public MarginCalculation(IExposureCalculation exposureCalculation, ICollateralCalculation collateralCalculation)
         {
-            this.exposureCaculation = exposureCaculation;
+            this.exposureCalculation = exposureCalculation;
+            this.collateralCalculation = collateralCalculation;
         }
 
         public Money Calculate()
         {
-            Money collateral = Money.PoundSterling(6000);
-            return collateral - exposureCaculation.CalculateExposure();
+            Money collateral = collateralCalculation.CalculateCollateral();
+            Money exposure = exposureCalculation.CalculateExposure();
+            return exposure - collateral;
         }
     }
 }

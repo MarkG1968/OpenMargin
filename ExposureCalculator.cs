@@ -16,7 +16,7 @@ namespace MarkG1968.OpenMargin
             this.exposure = exposure;
         }
 
-        public Money CalculateExposure()
+        public Exposure CalculateExposure()
         {
             return exposure;
         }

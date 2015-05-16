@@ -6,8 +6,8 @@ using NodaMoney;
 
 namespace MarkG1968.OpenMargin
 {
-    public interface IExposureCalculation
+    public interface ICollateralCalculation
     {
-        Exposure CalculateExposure();
+        Money CalculateCollateral();
     }
 }

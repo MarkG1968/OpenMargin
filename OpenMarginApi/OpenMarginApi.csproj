@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56FC9D1C-48CC-4541-8B70-6967DF5C8497}</ProjectGuid>
+    <ProjectGuid>{93FA9FE1-A413-4680-83E9-CAF7C709B7CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MarkG1968.OpenMargin</RootNamespace>
@@ -30,36 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fixie, Version=1.0.0.15, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Fixie.1.0.0.15\lib\net45\Fixie.dll</HintPath>
-    </Reference>
-    <Reference Include="Moq">
-      <HintPath>packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Ploeh.AutoFixture">
-      <HintPath>packages\AutoFixture.3.24.3\lib\net40\Ploeh.AutoFixture.dll</HintPath>
-    </Reference>
-    <Reference Include="Ploeh.AutoFixture.AutoMoq">
-      <HintPath>packages\AutoFixture.AutoMoq.3.24.3\lib\net40\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
-    </Reference>
-    <Reference Include="Should.Fluent">
-      <HintPath>packages\ShouldFluent.1.1.19\lib\Should.Fluent.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Web.Http.Common">
-      <HintPath>packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.3\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,32 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollateralCalculation.cs" />
-    <Compile Include="Exposure.cs" />
-    <Compile Include="ExposureCalculatorTest.cs" />
-    <Compile Include="ExposureState.cs" />
-    <Compile Include="ExposureTest.cs" />
-    <Compile Include="ICollateralCalculation.cs" />
-    <Compile Include="Test\AutoFixtureExtension.cs" />
-    <Compile Include="CustomConvention.cs" />
-    <Compile Include="ExposureCalculation.cs" />
-    <Compile Include="ExposureCalculator.cs" />
-    <Compile Include="MarginCalculation.cs" />
-    <Compile Include="MarginCalculationTests.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="MarginCallModel.cs" />
+    <Compile Include="OpenMarginController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\FromAutoFixture.cs" />
-    <Compile Include="Test\FromInputAttributes.cs" />
-    <Compile Include="Test\AutoFixtureAttribute.cs" />
-    <Compile Include="Test\InputAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NodaMoney\NodaMoney\NodaMoney.csproj">
+    <ProjectReference Include="..\..\NodaMoney\NodaMoney\NodaMoney.csproj">
       <Project>{1814e8de-0e75-4e23-9f70-e039ac816b42}</Project>
       <Name>NodaMoney</Name>
     </ProjectReference>
