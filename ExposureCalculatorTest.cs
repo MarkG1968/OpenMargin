@@ -13,7 +13,7 @@ namespace MarkG1968.OpenMargin
     {
         public void an_exposure_calculation_returns_an_exposure()
         {
-            var expectedExposureAmount = new Fixture().Create<Money>();;
+            var expectedExposureAmount = new Fixture().Create<Money>();
 
             var sut = new ExposureCalculator(expectedExposureAmount);
 

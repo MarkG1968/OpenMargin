@@ -19,8 +19,8 @@ namespace MarkG1968.OpenMargin
                 .Where(method => method.IsVoid());
 
             Parameters
-                .Add<FromInputAttributes>()
-                .Add<FromAutoFixture>();
+                .Add<FromInputAttributes>();
+                //.Add<FromAutoFixture>();
         }
     }
 }

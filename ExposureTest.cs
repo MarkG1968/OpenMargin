@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NodaMoney;
 using Should.Fluent;
+using Ploeh.AutoFixture;
 
 namespace MarkG1968.OpenMargin
 {
@@ -31,11 +32,13 @@ namespace MarkG1968.OpenMargin
             sut.StateForBank.Should().Equal(ExposureState.AtTheMoney);
         }
  
-        public void an_exposure_is_convertable_to_money(Money expectedAmount)
+        public void an_exposure_is_convertable_to_money()
         {
-            Money sut = new Exposure(expectedAmount);
+            var expectedExposureAmount = new Fixture().Create<Money>();
 
-            sut.Should().Equal(expectedAmount);
+            Money sut = new Exposure(expectedExposureAmount);
+
+            sut.Should().Equal(expectedExposureAmount);
         }
     }
 }

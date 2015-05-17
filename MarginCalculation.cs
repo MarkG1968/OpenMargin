@@ -17,11 +17,11 @@ namespace MarkG1968.OpenMargin
             this.collateralCalculation = collateralCalculation;
         }
 
-        public Money Calculate()
+        public MarginCall Calculate()
         {
             Money collateral = collateralCalculation.CalculateCollateral();
             Money exposure = exposureCalculation.CalculateExposure();
-            return exposure - collateral;
+            return new MarginCall(exposure - collateral);
         }
     }
 }
