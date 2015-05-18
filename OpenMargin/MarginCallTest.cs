@@ -23,6 +23,7 @@ namespace MarkG1968.OpenMargin
         {
             var collateralAmount = Money.Euro(0);
             var expectedMarginCallAmount = Money.Euro(100);
+            Exposure expectedExposure = new Exposure(Money.Euro(100));
 
             var sut = new MarginCall(expectedMarginCallAmount, collateralAmount);
 
