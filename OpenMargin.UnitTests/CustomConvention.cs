@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fixie;
-using MarkG1968.OpenMargin.Test;
+using MarkG1968.OpenMargin.UnitTests.Test;
 
 namespace MarkG1968.OpenMargin
 {
@@ -20,7 +20,7 @@ namespace MarkG1968.OpenMargin
 
             Parameters
                 .Add<FromInputAttributes>();
-                //.Add<FromAutoFixture>();
+            //.Add<FromAutoFixture>();
         }
     }
 }

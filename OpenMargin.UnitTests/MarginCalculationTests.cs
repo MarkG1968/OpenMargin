@@ -2,10 +2,10 @@
 using NodaMoney;
 using System.Globalization;
 using Ploeh.AutoFixture.Dsl;
-using MarkG1968.OpenMargin.Test;
+using MarkG1968.OpenMargin.UnitTests.Test;
 using Ploeh.AutoFixture;
 
-namespace MarkG1968.OpenMargin
+namespace MarkG1968.OpenMargin.UnitTests
 {
     public class MarginCalculationTests
     {

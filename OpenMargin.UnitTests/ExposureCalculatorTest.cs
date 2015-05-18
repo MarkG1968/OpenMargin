@@ -7,7 +7,7 @@ using NodaMoney;
 using Ploeh.AutoFixture;
 using Should.Fluent;
 
-namespace MarkG1968.OpenMargin
+namespace MarkG1968.OpenMargin.UnitTests
 {
     public class ExposureCalculatorTests
     {

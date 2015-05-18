@@ -8,7 +8,7 @@ using System.Reflection;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 
-namespace MarkG1968.OpenMargin.Test
+namespace MarkG1968.OpenMargin.UnitTests.Test
 {
     public class FromAutoFixture : ParameterSource
     {

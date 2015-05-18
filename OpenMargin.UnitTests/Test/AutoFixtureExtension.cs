@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ploeh.AutoFixture.Kernel;
 
-namespace MarkG1968.OpenMargin.Test
+namespace MarkG1968.OpenMargin.UnitTests.Test
 {
     public static class AutoFixtureExtensions
     {

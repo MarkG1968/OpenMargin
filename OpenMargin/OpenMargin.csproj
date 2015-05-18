@@ -72,28 +72,19 @@
     <Compile Include="Collateral.cs" />
     <Compile Include="CollateralCalculation.cs" />
     <Compile Include="Exposure.cs" />
-    <Compile Include="ExposureCalculatorTest.cs" />
     <Compile Include="ExposureState.cs" />
-    <Compile Include="CollateralTest.cs" />
-    <Compile Include="ExposureTest.cs" />
     <Compile Include="ICollateralCalculation.cs" />
     <Compile Include="MarginCall.cs" />
-    <Compile Include="MarginCallTest.cs" />
     <Compile Include="MoneyExtension.cs" />
-    <Compile Include="Test\AutoFixtureExtension.cs" />
-    <Compile Include="CustomConvention.cs" />
     <Compile Include="ExposureCalculation.cs" />
     <Compile Include="ExposureCalculator.cs" />
     <Compile Include="MarginCalculation.cs" />
-    <Compile Include="MarginCalculationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\FromAutoFixture.cs" />
-    <Compile Include="Test\FromInputAttributes.cs" />
-    <Compile Include="Test\AutoFixtureAttribute.cs" />
-    <Compile Include="Test\InputAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
