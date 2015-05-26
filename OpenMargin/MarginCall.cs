@@ -12,27 +12,13 @@ namespace MarkG1968.OpenMargin
         private Collateral collateral;
         private Exposure exposure;
 
-        public MarginCall(Money amount)
+        public MarginCall(Collateral collateral, Exposure exposure)
         {
-            this.amount = amount;
-            this.collateral = new Collateral(new Money(0, amount.Currency));
-        }
-
-        public MarginCall(Money amount, Money collateralAmount)
-        {
-            this.amount = amount;
-            this.collateral = new Collateral(collateralAmount);
-        }
-
-        public MarginCall(Money collateralAmount, Exposure exposure)
-        {
-            this.collateral = new Collateral(collateralAmount);
+            this.collateral = collateral;
             this.exposure = exposure;
-            Money exposureMoney = exposure;
-            Money collateralMoney = collateral;
-            this.amount = exposureMoney - collateralMoney;
+            this.amount = (Money)exposure - (Money)collateral;
         }
-        
+
         public Action Action
         {
             get { return IsAnticaptedDemand() ? DetermineActionDueToCollateralPosition() : collateral.IsCollateralHeldByOtherParty() ? Action.Recall : Action.Call; }
@@ -43,14 +29,20 @@ namespace MarkG1968.OpenMargin
             return collateral.IsCollateralHeld() ? Action.Return : Action.Delivery;
         }
 
-        private bool IsAnticaptedDemand()
+        public bool IsAnticaptedDemand()
         {
             return amount.Amount < 0;
         }
 
-        public static implicit operator Money(MarginCall marginCall)
+
+        public Money AsAmount()
         {
-            return marginCall.amount;
+            return amount;
+        }
+
+        public static explicit operator Money(MarginCall marginCall)
+        {
+            return marginCall.AsAmount();
         }
     }
 }

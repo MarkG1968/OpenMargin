@@ -15,11 +15,16 @@ namespace MarkG1968.OpenMargin
             this.amount = amount;
         }
 
-        public static implicit operator Money(Collateral collateral)
+        public static explicit operator Money(Collateral collateral)
         {
             return collateral.amount;
         }
 
+        public static explicit operator Collateral(Money amount)
+        {
+            return new Collateral(amount);
+        }
+        
         public bool IsCollateralHeld()
         {
             return amount.IsPositive();
@@ -28,6 +33,11 @@ namespace MarkG1968.OpenMargin
         public bool IsCollateralHeldByOtherParty()
         {
             return amount.IsNegative();
+        }
+
+        public Money AsAmount()
+        {
+            return amount;
         }
     }
 }

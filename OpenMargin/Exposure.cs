@@ -24,14 +24,19 @@ namespace MarkG1968.OpenMargin
             }
         }
 
-        public static implicit operator Exposure(Money amount)
+        public static explicit operator Exposure(Money amount)
         {
             return new Exposure(amount);
         }
 
-        public static implicit operator Money(Exposure exposure)
+        public static explicit operator Money(Exposure exposure)
         {
             return exposure.amount;
+        }
+
+        public Money AsAmount()
+        {
+            return amount;
         }
     }
 }

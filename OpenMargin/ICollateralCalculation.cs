@@ -8,6 +8,6 @@ namespace MarkG1968.OpenMargin
 {
     public interface ICollateralCalculation
     {
-        Money CalculateCollateral();
+        Collateral CalculateCollateral();
     }
 }

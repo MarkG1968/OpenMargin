@@ -29,9 +29,9 @@ namespace MarkG1968.OpenMargin.UnitTests
 
             MarginCalculation sut = new MarginCalculation(exposureCalculation, collateralCalculation);
 
-            Money acutalMarginCall = sut.Calculate();
+            MarginCall acutalMarginCall = sut.Calculate();
             
-            acutalMarginCall.Should().Equal(expectedMarginCall);
+            acutalMarginCall.AsAmount().Should().Equal(expectedMarginCall);
         }
 
         public void performing_a_margin_calculation_should_result_in_margin_call()

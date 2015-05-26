@@ -8,14 +8,14 @@ namespace MarkG1968.OpenMargin
 {
     public class CollateralCalculator : ICollateralCalculation
     {
-        private Money collateral;
+        private Collateral collateral;
 
         public CollateralCalculator(Money collateral)
         {
-            this.collateral = collateral;
+            this.collateral = (Collateral)collateral;
         }
 
-        public Money CalculateCollateral()
+        public Collateral CalculateCollateral()
         {
             return collateral;
         }

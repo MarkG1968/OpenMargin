@@ -36,9 +36,9 @@ namespace MarkG1968.OpenMargin.UnitTests
         {
             var expectedExposureAmount = new Fixture().Create<Money>();
 
-            Money sut = new Exposure(expectedExposureAmount);
+            Exposure sut = new Exposure(expectedExposureAmount);
 
-            sut.Should().Equal(expectedExposureAmount);
+            sut.AsAmount().Should().Equal(expectedExposureAmount);
         }
     }
 }

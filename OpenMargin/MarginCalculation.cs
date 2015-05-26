@@ -19,9 +19,9 @@ namespace MarkG1968.OpenMargin
 
         public MarginCall Calculate()
         {
-            Money collateral = collateralCalculation.CalculateCollateral();
-            Money exposure = exposureCalculation.CalculateExposure();
-            return new MarginCall(exposure - collateral);
+            Collateral collateral = collateralCalculation.CalculateCollateral();
+            Exposure exposure = exposureCalculation.CalculateExposure();
+            return new MarginCall(collateral, exposure);
         }
     }
 }

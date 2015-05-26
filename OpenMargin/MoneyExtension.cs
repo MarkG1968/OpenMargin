@@ -18,5 +18,20 @@ namespace MarkG1968.OpenMargin
         {
             return money.Amount > 0;
         }
+
+        public static Collateral AsCollateral(this Money money)
+        {
+            return new Collateral(money);
+        }
+
+        public static Exposure AsExposure(this Money money)
+        {
+            return new Exposure(money);
+        }
+
+        public static Money ToZeroAmount(this Money money)
+        {
+            return new Money(0, money.Currency);
+        }
     }
 }
